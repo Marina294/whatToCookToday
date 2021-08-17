@@ -6,11 +6,13 @@ import DialogContent from "@material-ui/core/DialogContent";
 // import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import pan from './assets/pan.png';
+import food from './assets/food.png';
 import { BiSearchAlt } from "react-icons/bi";
 import "./index.css";
 
-const APP_ID = "47915a59";
-const APP_KEY = "daa28f2d2ccd74d661d0be4832236c41";
+
+const APP_ID = process.env.REACT_APP_API_ID;
+const APP_KEY = process.env.REACT_APP_API_KEY;
 
 
 const RecipeContainer = styled.div`
@@ -153,7 +155,7 @@ const Header = styled.div`
   padding: 1rem;
   font-size: 1.8rem;
   font-weight: bold;
-  @media only screen and (max-width: 650px) {
+  @media (max-width: 650px) {
     background-color: #29a083;
     color: white;
     display: block;
@@ -174,12 +176,12 @@ const SearchBox = styled.div`
   margin-left: 1rem;
   width: 60%;
   background-color: #f3fffc;
-  @media only screen and (max-width: 650px) {
+  @media (max-width: 650px) {
     flex-direction: row;
     padding: 1.2rem 1.2rem;
     border-radius: 0.8rem;
     margin: auto;
-    width: 60%;
+    width: 80%;
     background-color: white;
   }
 `;
@@ -188,7 +190,7 @@ const RecipeImage = styled.img`
   width: 4rem;
   height: auto;
   margin: 1rem;
-  @media only screen and (max-width: 650px) {
+  @media (max-width: 650px) {
     width: 4rem;
     height: auto;
     margin: 1rem 1rem 1rem 0rem;
@@ -200,7 +202,7 @@ const AppName = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  @media only screen and (max-width: 650px) {
+  @media (max-width: 650px) {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -211,10 +213,16 @@ const AppName = styled.div`
 
 const Placeholder = styled.img`
   color: red;
-  width: 120px;
-  height: 120px;
-  margin: 200px;
+  width: 80%;
+  height: auto;
+  margin: 2rem;
   opacity: 50%;
+  @media (max-width: 650px) {
+    width: 100%;
+    height: auto;
+    margin: 1rem 1rem 1rem 0rem;
+    text-align: center;
+  }
 `;
 
 const SearchInput = styled.input`
@@ -277,7 +285,7 @@ const AppComponent = () => {
             <RecipeComponent key={index} recipe={recipe.recipe} />
           ))
         ) : (
-          <Placeholder src={pan} />
+          <Placeholder src={food} />
         )}
       </RecipeListContainer>
     </Container>
