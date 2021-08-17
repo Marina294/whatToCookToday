@@ -43,7 +43,7 @@ const RecipeName = styled.span`
   // overflow: hidden;
   // text-overflow: ellipsis;
   @media (max-width: 650px) {
-    margin: 0.5rem 1rem;
+    margin: 1rem 1rem;
   }
 `;
 
