@@ -74,9 +74,12 @@ td {
   display: block;
 }
 
-.dwOFoC {
-  -webkit-box-flex: block;
-      -ms-flex: block;
-          flex: block;
+@media (max-width: 650px) {
+  .dwOFoC {
+    -webkit-box-flex: block;
+        -ms-flex: block;
+            flex: block;
+    margin-bottom: 1rem;
+  }
 }
 /*# sourceMappingURL=index.css.map */
