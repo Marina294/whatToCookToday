@@ -3,7 +3,6 @@ import Axios from "axios";
 import styled from "styled-components";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
-// import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import pan from './assets/pan.png';
 import food from './assets/food.png';
@@ -24,7 +23,6 @@ const RecipeContainer = styled.div`
   background-color: #ffffff;
   box-shadow: 0.2rem 0.2rem 1rem 0.2rem #f5dec4;
   @media (max-width: 650px) {
-
   }
 `;
 const CoverImage = styled.img`
@@ -37,7 +35,7 @@ const RecipeName = styled.span`
   font-size: 1.4rem;
   line-height: 120%;
   font-weight: 800;
-  color: black;
+  color: var(-black);
   margin: 1rem 2rem;
   // white-space: nowrap;
   // overflow: hidden;
@@ -48,7 +46,7 @@ const RecipeName = styled.span`
 `;
 
 const SeeMoreText = styled.span`
-  color: white;
+  color: #ffffff;
   font-size: 1.1rem;
   font-weight: 800;
   text-align: center;
@@ -90,7 +88,7 @@ const SeeNewTab = styled(SeeMoreText)`
 
 const Close = styled(SeeMoreText)`
   color: #2cac8d;
-  background-color: white;
+  background-color: #ffffff;
   border: solid 2px #2cac8d;
   text-align: center;
   @media (max-width: 650px) {
@@ -180,7 +178,7 @@ const Header = styled.div`
   font-weight: bold;
   @media (max-width: 650px) {
     background-color: #29a083;
-    color: white;
+    color: #ffffff;
     display: block;
     justify-content: center;
     text-align: center;
@@ -205,7 +203,7 @@ const SearchBox = styled.div`
     border-radius: 0.8rem;
     margin: auto;
     width: 80%;
-    background-color: white;
+    background-color: #ffffff;
   }
 `;
 

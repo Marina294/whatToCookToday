@@ -20,22 +20,18 @@ code {
 }
 
 ::-webkit-input-placeholder {
-  color: black;
   opacity: 0.3;
 }
 
 :-ms-input-placeholder {
-  color: black;
   opacity: 0.3;
 }
 
 ::-ms-input-placeholder {
-  color: black;
   opacity: 0.3;
 }
 
 ::placeholder {
-  color: black;
   opacity: 0.3;
 }
 
