@@ -9,7 +9,7 @@ import pan from './assets/pan.png';
 import { BiSearchAlt } from "react-icons/bi";
 import "./index.css";
 
-const APP_ID = process.env.REACT_APP_API_ID;
+const APP_ID = "47915a59";
 const APP_KEY = process.env.REACT_APP_API_KEY;
 
 
