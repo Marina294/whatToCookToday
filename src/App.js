@@ -3,58 +3,88 @@ import Axios from "axios";
 import styled from "styled-components";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
+// import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import pan from './assets/pan.png';
 import { BiSearchAlt } from "react-icons/bi";
 import "./index.css";
 
-const APP_ID = "47915a59";
-const APP_KEY = "daa28f2d2ccd74d661d0be4832236c41";
+const APP_ID = process.env.REACT_APP_API_ID;
+const APP_KEY = process.env.REACT_APP_API_KEY;
+
 
 const RecipeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  width: 300px;
-  box-shadow: 0 3px 10px 0 #aaa;
+  padding: 0rem 0rem 1.5rem 0rem;
+  width: 18rem;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0.2rem 0.2rem 1rem 0.2rem #f5dec4;
 `;
 
 const CoverImage = styled.img`
   object-fit: cover;
-  height: 200px;
+  height: 15rem;
+  border-radius: 1rem 1rem 0rem 0rem;
 `;
 
 const RecipeName = styled.span`
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 120%;
+  font-weight: 800;
   color: black;
-  margin: 10px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin: 1rem 2rem;
+  // white-space: nowrap;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
 `;
 
 const SeeMoreText = styled.span`
-  color: #eb3300;
-  font-size: 18px;
+  // color: #e43950;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 800;
   text-align: center;
-  border: solid 1px #eb3300;
-  border-radius: 3px;
-  padding: 10px 15px;
+  border: solid 1px #e43950;
+  background-color: #e43950;
+  border-radius: 100px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 0.8rem 0.8rem;
   cursor: pointer;
 `;
 
 const IngredientsText = styled(SeeMoreText)`
-  color: green;
-  border: solid 1px green;
-  margin-bottom: 12px;
+  color: #2cac8d;
+  font-weight: 800;
+  background-color: #FFFFFF;
+  border: solid 2px #2cac8d;
+  margin-bottom: 1rem;
 `;
 
 const SeeNewTab = styled(SeeMoreText)`
-  color: green;
-  border: solid 1px green;
+  color: #ffffff;
+  // border: solid 1px green;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 `;
+
+const Close = styled(SeeMoreText)`
+  color: #2cac8d;
+  background-color: white;
+  border: solid 2px #2cac8d;
+`;
+
+const IngredientsContainer = styled.span`
+  padding: 2rem;
+  text-align: center;
+`;
+
+// const IngredientsTitle = styled.span`
+//   font-size: 1.2rem;
+// `;
+
 
 const RecipeComponent = (props) => {
   const [show, setShow] = useState("");
@@ -67,36 +97,42 @@ const RecipeComponent = (props) => {
         aria-labelledby="simple-dialog-title"
         open={!!show}
       >
-        <DialogTitle>Ingredients</DialogTitle>
+        <IngredientsContainer>
+        {/* <IngredientsTitle>Ingredients</IngredientsTitle> */}
         <DialogContent>
           <RecipeName>{label}</RecipeName>
           <table>
             <thead>
-              <th>Ingredient</th>
-              <th>Weight</th>
+              <th>Ingredients</th>
+              {/* <th>Weight</th> */}
             </thead>
             <tbody>
               {ingredients.map((ingredient, index) => (
                 <tr key={index} className="ingredient-list">
-                  <td>{ingredient.text}</td>
-                  <td>{ingredient.weight}</td>
+                  <td>- {ingredient.text}</td>
+                  {/* <td>{ingredient.weight}</td> */}
                 </tr>
               ))}
             </tbody>
           </table>
         </DialogContent>
         <DialogActions>
-          <SeeNewTab onClick={() => window.open(url)}>See More</SeeNewTab>
-          <SeeMoreText onClick={() => setShow("")}>Close</SeeMoreText>
+          <SeeNewTab onClick={() => window.open(url)}>
+            Move to Recipe Site
+            </SeeNewTab>
+          <Close onClick={() => setShow("")}>
+            Close
+            </Close>
         </DialogActions>
+        </IngredientsContainer>
       </Dialog>
       <CoverImage src={image} alt={label} />
       <RecipeName>{label}</RecipeName>
       <IngredientsText onClick={() => setShow(!show)}>
-        Ingredients
+        Check Ingredients
       </IngredientsText>
       <SeeMoreText onClick={() => window.open(url)}>
-        See Complete Recipe
+        Move to Recipe Site
       </SeeMoreText>
     </RecipeContainer>
   );
@@ -108,18 +144,18 @@ const Container = styled.div`
 `;
 
 const Header = styled.div`
-  background-color: #FCE38A;
-  color: #413a30;
+  background-color: #e43950;
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
   padding: 1rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
   @media only screen and (max-width: 650px) {
-    background-color: pink;
-    color: black;
+    background-color: #29a083;
+    color: white;
     display: block;
     justify-content: center;
     text-align: center;
@@ -137,14 +173,14 @@ const SearchBox = styled.div`
   border-radius: 0.8rem;
   margin-left: 1rem;
   width: 60%;
-  background-color: #ffffff;
+  background-color: #f3fffc;
   @media only screen and (max-width: 650px) {
     flex-direction: row;
-    padding: 1.5rem 1.5rem;
+    padding: 1.2rem 1.2rem;
     border-radius: 0.8rem;
     margin: auto;
     width: 60%;
-    background-color: #ffffff;
+    background-color: white;
   }
 `;
 
@@ -174,6 +210,7 @@ const AppName = styled.div`
 `;
 
 const Placeholder = styled.img`
+  color: red;
   width: 120px;
   height: 120px;
   margin: 200px;
@@ -224,7 +261,9 @@ const AppComponent = () => {
           What To Cook Today
         </AppName>
         <SearchBox>
-            <BiSearchAlt />
+            <div className='searchIcon'>
+              <BiSearchAlt />
+            </div>
           <SearchInput
             placeholder="food name, ingredients"
             value={searchQuery}
