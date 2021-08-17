@@ -61,7 +61,6 @@ const SeeMoreText = styled.span`
   cursor: pointer;
   @media (max-width: 650px) {
     display: flex;
-    min-width:15%;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -83,6 +82,10 @@ const SeeNewTab = styled(SeeMoreText)`
   color: #ffffff;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  @media (max-width: 650px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;
 
 const Close = styled(SeeMoreText)`
@@ -91,7 +94,7 @@ const Close = styled(SeeMoreText)`
   border: solid 2px #2cac8d;
   text-align: center;
   @media (max-width: 650px) {
-    max-width: 10%;
+    min-width: 20%;
   }
 `;
 

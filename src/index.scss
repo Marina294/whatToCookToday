@@ -62,12 +62,17 @@ td {
 
 .dwOFoC {
   @media (max-width: 650px) {
-    flex: block;
+    display: block;
     margin-bottom: 1rem;
   }
 }
 
-
+.fHtiHo {
+  @media (max-width: 650px) {
+    display: block;
+    margin: auto;
+  }
+}
 
 // .recipe-app {
 //   display: flex;

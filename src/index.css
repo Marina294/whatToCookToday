@@ -76,10 +76,15 @@ td {
 
 @media (max-width: 650px) {
   .dwOFoC {
-    -webkit-box-flex: block;
-        -ms-flex: block;
-            flex: block;
+    display: block;
     margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .fHtiHo {
+    display: block;
+    margin: auto;
   }
 }
 /*# sourceMappingURL=index.css.map */
