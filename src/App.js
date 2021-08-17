@@ -23,8 +23,10 @@ const RecipeContainer = styled.div`
   border-radius: 1rem;
   background-color: #ffffff;
   box-shadow: 0.2rem 0.2rem 1rem 0.2rem #f5dec4;
-`;
+  @media (max-width: 650px) {
 
+  }
+`;
 const CoverImage = styled.img`
   object-fit: cover;
   height: 15rem;
@@ -40,10 +42,12 @@ const RecipeName = styled.span`
   // white-space: nowrap;
   // overflow: hidden;
   // text-overflow: ellipsis;
+  @media (max-width: 650px) {
+    margin: 0.5rem 1rem;
+  }
 `;
 
 const SeeMoreText = styled.span`
-  // color: #e43950;
   color: white;
   font-size: 1.1rem;
   font-weight: 800;
@@ -55,6 +59,16 @@ const SeeMoreText = styled.span`
   margin-right: 2rem;
   padding: 0.8rem 0.8rem;
   cursor: pointer;
+  @media (max-width: 650px) {
+    display: flex;
+    min-width:20%;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+¥
 `;
 
 const IngredientsText = styled(SeeMoreText)`
@@ -67,7 +81,6 @@ const IngredientsText = styled(SeeMoreText)`
 
 const SeeNewTab = styled(SeeMoreText)`
   color: #ffffff;
-  // border: solid 1px green;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 `;
@@ -76,11 +89,18 @@ const Close = styled(SeeMoreText)`
   color: #2cac8d;
   background-color: white;
   border: solid 2px #2cac8d;
+  text-align: center;
+  @media (max-width: 650px) {
+    max-width: 10%;
+  }
 `;
 
 const IngredientsContainer = styled.span`
   padding: 2rem;
   text-align: center;
+  @media (max-width: 650px) {
+    padding: 0rem;
+  }
 `;
 
 // const IngredientsTitle = styled.span`
