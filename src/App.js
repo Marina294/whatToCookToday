@@ -61,7 +61,7 @@ const SeeMoreText = styled.span`
   cursor: pointer;
   @media (max-width: 650px) {
     display: flex;
-    min-width:20%;
+    min-width:15%;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -166,7 +166,7 @@ const Container = styled.div`
 `;
 
 const Header = styled.div`
-  background-color: #e43950;
+  background-color: #29a083;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
