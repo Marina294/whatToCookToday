@@ -104,11 +104,6 @@ const IngredientsContainer = styled.span`
   }
 `;
 
-// const IngredientsTitle = styled.span`
-//   font-size: 1.2rem;
-// `;
-
-
 const RecipeComponent = (props) => {
   const [show, setShow] = useState("");
 
@@ -121,19 +116,16 @@ const RecipeComponent = (props) => {
         open={!!show}
       >
         <IngredientsContainer>
-        {/* <IngredientsTitle>Ingredients</IngredientsTitle> */}
         <DialogContent>
           <RecipeName>{label}</RecipeName>
           <table>
             <thead>
               <th>Ingredients</th>
-              {/* <th>Weight</th> */}
             </thead>
             <tbody>
               {ingredients.map((ingredient, index) => (
                 <tr key={index} className="ingredient-list">
                   <td>- {ingredient.text}</td>
-                  {/* <td>{ingredient.weight}</td> */}
                 </tr>
               ))}
             </tbody>
@@ -183,9 +175,6 @@ const Header = styled.div`
     justify-content: center;
     text-align: center;
     align-items: center;
-    // padding: 1rem;
-    // font-size: 1.6rem;
-    // font-weight: bold;
   }
 `;
 
