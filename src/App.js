@@ -253,6 +253,23 @@ const RecipeListContainer = styled.div`
   justify-content: space-evenly;
 `;
 
+const Footer = styled.footer`
+  color: gray;
+  font-size: 0.8em;
+  margin-top: 1em;
+  text-align: center;
+  padding: 1em;
+`;
+
+const FooterLink = styled.a`
+  color: gray;
+  text-decoration: none;
+
+  &:hover {
+    color: #2cac8d;
+  }
+`;
+
 const AppComponent = () => {
   const [searchQuery, updateSearchQuery] = useState("");
   const [recipeList, updateRecipeList] = useState([]);
@@ -298,6 +315,12 @@ const AppComponent = () => {
           <Placeholder src={food} />
         )}
       </RecipeListContainer>
+            <Footer>
+        World Clock by{" "}
+        <FooterLink href="https://github.com/marina294" target="_blank">
+          Marina
+        </FooterLink>{" "}
+      </Footer>
     </Container>
   );
 };
