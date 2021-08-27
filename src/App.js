@@ -316,7 +316,7 @@ const AppComponent = () => {
         )}
       </RecipeListContainer>
             <Footer>
-        World Clock by{" "}
+        What To Cook Today by{" "}
         <FooterLink href="https://github.com/marina294" target="_blank">
           Marina
         </FooterLink>{" "}
