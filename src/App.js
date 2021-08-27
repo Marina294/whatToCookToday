@@ -263,7 +263,7 @@ const Footer = styled.footer`
 
 const FooterLink = styled.a`
   color: gray;
-  text-decoration: none;
+  text-decoration: underline;
 
   &:hover {
     color: #2cac8d;
